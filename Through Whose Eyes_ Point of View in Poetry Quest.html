@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Through Whose Eyes? Point of View in Poetry</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&display=swap">
+<style>
+:root{--b1:#e3ffe9;--b2:#dfe9ff;--card:#fff;--ink:#241a3a;--mut:#6b6385;--hl:#fff1a8;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--b1:#0c3a35;--b2:#1a1650;--card:#1f1b3d;--ink:#f4efff;--mut:#b8afd6;--hl:#5d4d10}}
+:root[data-theme="dark"]{--b1:#0c3a35;--b2:#1a1650;--card:#1f1b3d;--ink:#f4efff;--mut:#b8afd6;--hl:#5d4d10}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%}
+body{font-family:'Baloo 2',system-ui,'Segoe UI',sans-serif;color:var(--ink);background:linear-gradient(135deg,var(--b1),var(--b2)) fixed;padding:12px}
+#w{max-width:860px;margin:0 auto}
+.hd{display:flex;gap:10px;justify-content:space-between;align-items:center;background:var(--card);border-radius:999px;padding:8px 18px;box-shadow:0 4px 14px #0002;font-weight:700;font-size:clamp(14px,3.4vw,20px)}
+h1{font-size:clamp(28px,7vw,52px);margin:.4em 0 0;text-align:center;background:linear-gradient(90deg,#12a05c,#2f80ed,#9b5de5,#ff5f9e);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:800}
+h2{font-size:clamp(19px,4.4vw,30px);margin:.2em 0}
+p{font-size:clamp(16px,3.2vw,22px);line-height:1.4;margin:.4em 0}.sub{text-align:center;color:var(--mut)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-top:14px}
+.wc{border:0;border-radius:20px;padding:16px 10px;color:#fff;background:linear-gradient(135deg,var(--a),var(--b));display:flex;flex-direction:column;align-items:center;gap:2px;cursor:pointer;font-family:inherit;font-size:clamp(16px,3.4vw,20px);box-shadow:0 6px 0 #0003;transition:transform .15s}
+.wc:hover:not(:disabled){transform:translateY(-4px) rotate(-1deg)}.wc:disabled{filter:grayscale(.8);opacity:.6;cursor:default}
+.wc .em{font-size:44px}.boss{--a:#ff3d3d;--b:#7a1fa2;grid-column:1/-1}
+.card{background:var(--card);border-radius:22px;padding:18px 20px;margin-top:14px;box-shadow:0 6px 18px #0002;border-top:8px solid var(--a,#9b5de5)}
+.big{font-size:60px;text-align:center}.std{display:inline-block;background:#2f80ed;color:#fff;border-radius:999px;padding:2px 12px;font-size:14px}
+.ex,.pm{border-radius:12px;padding:10px 14px;font-size:clamp(16px,3.4vw,22px);margin:8px 0;line-height:1.6}
+.ex{border:3px dashed var(--mut)}.pm{background:var(--hl)}
+.va{color:#3b8cff;font-weight:800}.vb{color:#ff5f9e;font-weight:800}
+mark{background:#ffb037;color:#241a3a;border-radius:6px;padding:0 4px}
+.go,.back{font-family:inherit;font-weight:700;font-size:clamp(16px,3.4vw,20px);border:0;border-radius:999px;padding:10px 22px;cursor:pointer;margin:8px 6px 0 0}
+.go{background:linear-gradient(90deg,#12a05c,#2f80ed);color:#fff;box-shadow:0 4px 0 #0003}.back{background:var(--mut);color:#fff}
+.op{display:block;width:100%;text-align:left;margin:8px 0;padding:12px 16px;border:0;border-radius:14px;color:#fff;font-family:inherit;font-weight:700;font-size:clamp(15px,3.2vw,20px);cursor:pointer;box-shadow:0 4px 0 #0003}
+.op:nth-of-type(4n+1){background:#e0475b}.op:nth-of-type(4n+2){background:#2f80ed}.op:nth-of-type(4n+3){background:#1e9e6a}.op:nth-of-type(4n+4){background:#8e4fd0}
+.op.bad{animation:sh .35s;opacity:.35}.op.right{outline:4px solid #ffd23f;transform:scale(1.02)}.op:disabled{cursor:default}
+@keyframes sh{25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}
+.fbk{border-radius:12px;padding:8px 12px;margin-top:8px;font-size:clamp(15px,3vw,20px)}.g{background:#12a05c33}.r{background:#e0475b33}
+.bar{height:12px;border-radius:9px;background:#0002;overflow:hidden;margin-top:14px}.bar i{display:block;height:100%;background:linear-gradient(90deg,#12a05c,#2f80ed);transition:width .4s}
+textarea{width:100%;border-radius:12px;border:3px solid var(--mut);padding:10px;font:inherit;font-size:clamp(15px,3vw,20px);background:var(--card);color:var(--ink)}
+.cf{position:fixed;top:-30px;font-size:26px;animation:fall 2.2s linear forwards;pointer-events:none;z-index:9}@keyframes fall{to{transform:translateY(110vh) rotate(360deg)}}
+</style></head><body><div id="w"><div id="hd" class="hd"></div><div id="pg"></div></div>
+<script>
+const $=id=>document.getElementById(id),words=t=>t.trim().split(/\s+/).filter(Boolean);
+const lines=t=>t.split('\n').map(x=>x.trim()).filter(Boolean),lab=t=>new Set(lines(t).map(l=>(l.match(/^([^:]{1,20}):/)||[])[1]).filter(Boolean).map(s=>s.toLowerCase()));
+const FP=/\b(I|my|me|we|our|us)\b/i,TP=/\b(he|she|they|his|her|their|him|them)\b/i;
+const O3=['First person','Second person','Third person'];
+const PN='<b>Narrator 1:</b> I stand at the free-throw line, my hands shaking.<br><b>Narrator 2:</b> I watch from the bleachers, holding my breath.';
+const PH='The girl sat alone at the lunch table.<br>She pushed her food around the tray.<br>&emsp;&emsp;<i>I wasn’t hungry. I just wanted someone to say my name.</i>';
+const W=[
+{n:'Who’s Telling?',e:'🎙️',c:['#12a05c','#2fd0c4'],s:'ELA.6.R.1.3 • Point of View',d:'<b>Point of view</b> is the person of the narrator. <b>First person</b> uses <i>I, me, my, we</i>. <b>Third person</b> uses <i>he, she, they</i> or names. <b>Second person</b> speaks to <i>you</i>.',x:'<span class="va">First person:</span> I kicked the ball, and my heart raced.<br><span class="vb">Third person:</span> Maya kicked the ball, and her heart raced.',k:'Clue: look at the pronouns!',
+ q:[['What point of view is this poem?',O3,0,'“I” and “my” show a first-person narrator.','I trudged through the snow,<br>my boots heavy and cold.'],
+ ['What point of view is this poem?',['First person','Third person','Second person'],1,'“Marcus” and “He” show an outside narrator, so it is third person.','Marcus walked to the bus stop.<br>He shivered in the wind.'],
+ ['What point of view is this poem?',['First person','Second person','Third person'],1,'The narrator speaks to “you,” which is second person.','You open the door,<br>and the wind rushes in.'],
+ ['Which line is written in first person?',['She waved goodbye to the train.','We waved goodbye to the train.','They waved goodbye to the train.'],1,'“We” is a first-person pronoun.']],
+ p:'Write 2 lines about your morning in <b>first person</b> (use I, my, or me).',a:'I hit snooze three times.<br>My cereal was soggy again.',h:'Hint: write at least 4 words and use I, me, my, or we.',v:t=>words(t).length>=4&&FP.test(t)},
+{n:'Pronoun Clues',e:'🔎',c:['#7b2ff7','#f107a3'],s:'ELA.6.R.1.3 • Point of View',d:'Pronouns are your <b>clues</b>. Circle <i>I/we</i> for first person and <i>he/she/they</i> for third person. A first-person narrator can be a character <b>inside</b> the poem.',x:'<span class="vb">He</span> listens for footsteps.<br><span class="va">I</span> watch <span class="va">my</span> sister.',k:'Clue: find the pronouns first',
+ q:[['Which pronouns are the clues to the point of view?',['He and His','I and my','You and your'],0,'He and His point to an outside, third-person narrator.','The old dog waits at the gate.<br>He listens for footsteps.<br>His tail thumps the ground.'],
+ ['What point of view is this poem?',['Third person','First person (plural)','Second person'],1,'“We” and “our” show a group narrator, which is first person.','We built a fort from blankets,<br>and our laughter filled the room.'],
+ ['Who is the narrator of this poem?',['She','A character who watches her and says “I”','An outside narrator with no “I”'],1,'“I see” shows a first-person narrator inside the poem.','She says she doesn’t care,<br>but I see her hands shake.'],
+ ['What point of view is this poem?',['First person','Second person','Third person'],2,'They, their, and they point to third person.','They packed their bags.<br>Their train left at noon.<br>They never looked back.']],
+ p:'Write 2 lines about a student at lunch in <b>third person</b> (use he, she, or they; do not use I).',a:'She opened her lunchbox slowly.<br>He traded his chips for a cookie.',h:'Hint: at least 4 words, use he/she/they, and do not use I, me, or my.',v:t=>words(t).length>=4&&TP.test(t)&&!FP.test(t)},
+{n:'What the Narrator Knows',e:'🧠',c:['#ff5f9e','#ff9a3d'],s:'ELA.6.R.1.3 • Point of View',d:'A <b>first-person</b> narrator shares their own thoughts up close. A <b>third-person</b> narrator describes characters from the <b>outside</b>, so we learn feelings from actions and details.',x:'<span class="va">First:</span> I smiled, but my stomach twisted.<br><span class="vb">Third:</span> She smiled, but her hands shook.',k:'Clue: who can tell us the secret thoughts?',
+ q:[['What does the first-person narrator reveal that others in the poem can’t see?',['The weather','The narrator’s secret nervous feelings','What everyone else is thinking'],1,'Only the narrator knows about the knots in their stomach.','I told everyone I was fine,<br>but my stomach twisted in knots.'],
+ ['How does the third-person narrator show Lena’s feelings?',['By describing her actions and looks','By using “I”','By telling the reader’s secrets'],0,'The stopped pencil and red cheeks show how she feels.','Lena stared at the test.<br>Her pencil stopped.<br>Her cheeks turned red.'],
+ ['Why might a poet choose first person?',['To keep readers far away','To let readers feel the narrator’s thoughts up close','To avoid describing feelings'],1,'First person puts readers inside the narrator’s mind.'],
+ ['Why might a poet choose third person?',['To describe a character from the outside','To use the word “I”','To speak directly to “you”'],0,'Third person lets the narrator watch characters from outside.']],
+ p:'Write 2 lines in first person that reveal a <b>secret thought</b> only the narrator knows.',a:'I said I loved the gift.<br>Secretly, I wanted the red one.',h:'Hint: at least 5 words and use I, me, or my.',v:t=>words(t).length>=5&&FP.test(t)},
+{n:'Multiple Narrators',e:'🗣️',c:['#3b8cff','#9b5de5'],s:'ELA.6.R.1.3 • Multiple Narrators',d:'Some poems have <b>more than one narrator</b>, each with their own “I.” The reader sees <b>one event from different views</b>, which changes the meaning.',x:'<span class="va">Narrator 1:</span> I stand at the line.<br><span class="vb">Narrator 2:</span> I watch from the stands.',k:'Clue: each narrator has their own experience',
+ q:[['How many narrators are in this poem?',['1','2','3'],1,'Narrator 1 and Narrator 2 each speak.',PN],
+ ['Both narrators say “I.” What does that tell you?',['Each is a first-person narrator with their own view','They are the same person','They are third-person narrators'],0,'“I” shows each narrator speaks for themselves.',PN],
+ ['How do their experiences differ?',['They both are playing','One feels the pressure of playing; the other feels the worry of watching','They both are watching'],1,'One is on the court and one is in the bleachers.',PN],
+ ['What is the effect of using both narrators?',['We see the tense moment from two sides','The poem changes to another game','The poem has no point of view'],0,'Two narrators show how the moment affects more than one person.',PN]],
+ p:'Write 4 lines with two narrators about a big test. Label them <b>Narrator 1:</b> and <b>Narrator 2:</b> and use I in each.',a:'Narrator 1: I stare at question one.<br>Narrator 2: I hand out the tests and watch.<br>Narrator 1: My pencil won’t stop shaking.<br>Narrator 2: I hope everyone does well.',h:'Hint: write 4 lines, label two narrators, and use I, my, or me.',v:t=>lines(t).length>=4&&lab(t).size>=2&&FP.test(t)},
+{n:'POV Shift',e:'🔄',c:['#ff3d3d','#ffb037'],s:'ELA.6.R.1.3 • Shifts in Point of View',d:'A poem can <b>shift</b> its point of view, for example from third person to first. A shift can change the <b>mood</b>, bring readers <b>closer</b>, or reveal what a character hides.',x:'<span class="vb">She</span> pushed her food around.<br><span class="va">I</span> just wanted someone to say my name.',k:'Clue: watch for the pronouns to change',
+ q:[['Where does the point of view shift?',['Line 1','From third person to first person in the last line','It never shifts'],1,'“She” changes to “I” in the final line.',PH],
+ ['What is the effect of the shift?',['It moves the reader closer to her true feelings','It adds more rhyme','It makes the poem about a new character'],0,'The first-person line lets us hear her own thoughts.',PH],
+ ['How does the tone change?',['From distant and observing to personal and lonely','From happy to angry','It stays the same'],0,'The shift to “I” makes the lonely feeling more personal.',PH],
+ ['Why might the poet use this shift?',['To reveal thoughts an outside narrator could not show','To make the poem longer','To change the topic to food'],0,'First person can share inner thoughts the outside view can’t.',PH]],
+ p:'Write a 4-line poem that <b>shifts</b>: first 2 lines in third person (he/she/they), last 2 in first person (I/my).',a:'He stood at the edge of the pool.<br>His toes curled over the tile.<br>I told myself I wasn’t scared.<br>My heart didn’t believe me.',h:'Hint: 4 lines. Use he/she/they in lines 1-2, then I/my/me in lines 3-4.',v:t=>{const L=lines(t);return L.length>=4&&TP.test(L.slice(0,2).join(' '))&&FP.test(L.slice(2).join(' '))}},
+{n:'Rewrite It!',e:'✍️',c:['#8e4fd0','#3b8cff'],s:'ELA.6.R.1.3 • Point of View (application)',d:'To change point of view, <b>swap the pronouns</b> (and check the verbs). She → I, her → my. The poem’s <b>feel changes</b> too: first person feels closer.',x:'<span class="vb">Third:</span> She picked up her bag.<br><span class="va">First:</span> I picked up my bag.',k:'Clue: change every pronoun, not just one',
+ q:[['Which sentence rewrites “She picked up her bag and walked home alone” in first person?',['You picked up your bag and walked home alone.','They picked up their bag and walked home alone.','I picked up my bag and walked home alone.'],2,'She → I and her → my.'],
+ ['Rewrite “I lost my shoe in the mud” in third person about Sam.',['I lost his shoe in the mud.','Sam lost my shoe in the mud.','Sam lost his shoe in the mud.'],2,'Sam and his are both third person.'],
+ ['What happens to a poem’s feel when you change third person to first person?',['It feels more personal and close','It feels farther away','Nothing changes'],0,'First person shares thoughts directly.'],
+ ['“They cheered” becomes “We cheered.” What changed?',['The narrator is now part of the group','The narrator is now outside the group','The poem is now second person'],0,'“We” puts the narrator inside the group.']],
+ p:'Capstone! Rewrite in <b>first person</b>: <i>“She picked up her bag and walked home alone.”</i> Add one more line about how you feel.',a:'I picked up my bag and walked home alone.<br>I felt the quiet follow me.',h:'Hint: use I and my, and do not use she or her. Write at least 5 words.',v:t=>words(t).length>=5&&/\bI\b/.test(t)&&!/\b(she|her)\b/i.test(t)}];
+const B=[['What point of view is this poem?',O3,2,'“Dani” and “her” show third person.','Dani tied her skates<br>and glided onto the ice.'],
+['What point of view is this poem?',O3,0,'“I” and “my” show first person.','I hold the microphone,<br>my voice a trembling leaf.'],
+['What point of view is this poem?',O3,1,'Speaking to “you” is second person.','You step onto the stage,<br>and the lights find your face.'],
+['A poem has two narrators who each say “I.” What is the influence on meaning?',['It shows one event from two different views','It makes the poem second person','It removes the narrators'],0,'Two narrators give two perspectives on the same event.',PN],
+['A poem shifts from third person to first person in the last line. What is the likely effect?',['It reveals the character’s inner thoughts','It changes the setting','It adds a rhyme'],0,'First person can show inner thoughts.',PH],
+['Which is a third-person rewrite of “I miss my dog”?',['Eli misses his dog.','I miss Eli’s dog.','You miss your dog.'],0,'Eli and his are third-person words.']];
+let xp=0,streak=0,stars=[],Q,qi,ok,cur;
+const ranks=['Rookie Reader','Pronoun Spotter','POV Detective','Narrator Pro','Legend 🏆'];
+function upd(){const k=[0,120,300,500,700].filter(t=>xp>=t).length-1;$('hd').innerHTML=`<span>${ranks[k]}</span><span>⭐ ${xp} XP</span><span>🔥 ${streak}</span>`}
+function put(h){$('pg').innerHTML=h;upd();scrollTo(0,0)}
+function boom(){const e=['🎉','⭐','✨','🎈','💥'];for(let k=0;k<22;k++){const s=document.createElement('span');s.className='cf';s.textContent=e[k%5];s.style.left=Math.random()*100+'vw';s.style.animationDelay=Math.random()*.5+'s';document.body.appendChild(s);setTimeout(()=>s.remove(),2800)}}
+function map(){const dn=stars.slice(0,6).filter(Boolean).length;
+ put(`<h1>👀 Through Whose Eyes?</h1><p class="sub">Point of View in Poetry Quest • Florida B.E.S.T. ELA.6.R.1.3<br>Beat each world to unlock the next!</p><div class="grid">`+W.map((w,i)=>{const lk=i>0&&!stars[i-1];return `<button class="wc" style="--a:${w.c[0]};--b:${w.c[1]}" ${lk?'disabled':''} onclick="teach(${i})"><span class="em">${lk?'🔒':w.e}</span><b>${w.n}</b><small>${stars[i]?'⭐'.repeat(stars[i]):lk?'Locked':'Play!'}</small></button>`}).join('')+`<button class="wc boss" ${dn<6?'disabled':''} onclick="boss()"><span class="em">${dn<6?'🔒':'👾'}</span><b>BOSS BATTLE: POV Showdown</b><small>${stars[6]?'⭐'.repeat(stars[6]):dn<6?'Beat all 6 worlds first':'Play!'}</small></button></div>`)}
+function teach(i){const w=W[i];put(`<div class="card" style="--a:${w.c[0]}"><div class="big">${w.e}</div><h2>${w.n}</h2><span class="std">${w.s}</span><p>${w.d}</p><div class="ex">${w.x}</div><p>🔍 ${w.k}</p><button class="go" onclick="quiz(${i})">Start! →</button><button class="back" onclick="map()">← Map</button></div>`)}
+function quiz(i){cur=i;Q=W[i].q;qi=0;ok=0;ask()}
+function boss(){cur=6;Q=B;qi=0;ok=0;ask()}
+function ask(){const q=Q[qi],b=cur==6,last=qi==Q.length-1;let miss=0;
+ put(`<div class="bar"><i style="width:${qi/Q.length*100}%"></i></div><p class="sub">${b?'👾 Boss Battle':W[cur].e+' '+W[cur].n} • Question ${qi+1} of ${Q.length}</p><div class="card" style="--a:${b?'#ff3d3d':W[cur].c[0]}">${q[4]?'<div class="pm">'+q[4]+'</div>':''}<h2>${q[0]}</h2>${q[1].map((o,k)=>`<button class="op" data-k="${k}">${o}</button>`).join('')}<div id="fb"></div></div>`);
+ document.querySelectorAll('.op').forEach(btn=>btn.onclick=()=>{const k=+btn.dataset.k;
+  if(k==q[2]){let pts=3;if(!miss){ok++;pts=10+Math.min(streak,5)*2;streak++}xp+=pts;upd();
+   document.querySelectorAll('.op').forEach(x=>x.disabled=true);btn.classList.add('right');if(!miss&&streak>=3)boom();
+   $('fb').innerHTML=`<div class="fbk g">✅ ${q[3]} <b>+${pts} XP</b></div><button class="go" id="nx">${last?'Continue →':'Next →'}</button>`;
+   $('nx').onclick=()=>{if(!last){qi++;ask()}else fin()}}
+  else{miss++;streak=0;upd();btn.disabled=true;btn.classList.add('bad');$('fb').innerHTML='<div class="fbk r">❌ Not quite! Check the pronouns and try another answer.</div>'}})}
+function fin(){const t=Q.length,s=ok==t?3:ok>=t-2?2:1;stars[cur]=Math.max(stars[cur]||0,s);cur==6?result(true):create()}
+function create(){const w=W[cur];
+ put(`<div class="card" style="--a:${w.c[0]}"><h2>✍️ Your Turn: Create One!</h2><p>${w.p}</p><textarea id="ta" rows="5" placeholder="Type here... (press Enter for a new line)"></textarea><div id="fb"></div><button class="go" id="sub">Submit (+50 XP)</button><button class="back" id="skip">Skip</button></div>`);
+ $('skip').onclick=()=>result();
+ $('sub').onclick=()=>{const t=$('ta').value;
+  if(w.v(t)){xp+=50;upd();boom();$('sub').remove();$('skip').remove();$('fb').innerHTML=`<div class="fbk g">🌟 Awesome! +50 XP<br>Example:<br><i>${w.a}</i></div><button class="go" onclick="result()">Finish World →</button>`}
+  else $('fb').innerHTML=`<div class="fbk r">${w.h}</div>`}}
+function result(bd){boom();const s=stars[cur],all=stars.filter(Boolean).length==7;
+ put(`<div class="card"><div class="big">${bd?'🏆':'🎉'}</div><h2>${bd?'BOSS DEFEATED!':'World Complete!'}</h2><p style="font-size:40px;text-align:center;margin:0">${'⭐'.repeat(s)}</p><p>You have <b>${xp} XP</b>.${all?' You beat the whole game, narrator! 🎤':' Next world unlocked!'}</p><button class="go" onclick="map()">Back to Map →</button></div>`)}
+map();
+</script></body></html>
